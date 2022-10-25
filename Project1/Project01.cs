@@ -93,6 +93,7 @@ namespace Project01
         static byte CalculateWinner(char playerOneChoice, char playerTwoChoice)
         {
             byte result;
+            // 1 - rock 2 - paper 3 - scissors
             if ((playerOneChoice == '1' && playerTwoChoice == '3') || (playerOneChoice == '2' && playerTwoChoice == '1') || (playerOneChoice == '3' && playerTwoChoice == '2'))
             {
                 result = 1;
@@ -159,11 +160,11 @@ namespace Project01
             string choice;
             if (playerChoice == '1')
             {
-                choice = "Rock Bottom";
+                choice = "Rock";
             }
             else if (playerChoice == '2')
             {
-                choice = "Flying Leg Scissors";
+                choice = "Scissors";
             }
             else
             {
@@ -235,7 +236,7 @@ namespace Project01
             PrintSmallHeader();
             Console.WriteLine("- - - - -One Player Coming Soon- - - - -");
             Console.WriteLine("Look Out For It in the MEGA Rasslin' DLC");
-            PressAnyKey();
+            Thread.Sleep(3000);
             ShowMenu();
         }
         static void TwoPlayerMode()
@@ -253,9 +254,9 @@ namespace Project01
             Console.WriteLine($"{playerOneName} VERSUS {playerTwoName}");
             PrintRules();
             Console.WriteLine("--- Choose a value ---");
-            Console.WriteLine("Press 1 for a Rock Bottom");
-            Console.WriteLine("Press 2 for some Flying Leg Scissors");
-            Console.WriteLine("Press 3 for Whatever Paper Is");
+            Console.WriteLine("Press 1 for  Rock");
+            Console.WriteLine("Press 2 for Whatever Paper Is");
+            Console.WriteLine("Press 3 for Scissors");
             do
             {
                 playerOneChoice = PromptForChar($"{playerOneName} - > : ");

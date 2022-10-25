@@ -8,24 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\mattg\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\mchildr3\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mattg\\source\\repos\\Project01\\Project1\\Project01.csproj",
+      "projectUniqueName": "C:\\Users\\mchildr3\\source\\repos\\Project01\\Project1\\Project01.csproj",
       "projectName": "Project01",
-      "projectPath": "C:\\Users\\mattg\\source\\repos\\Project01\\Project1\\Project01.csproj",
-      "packagesPath": "C:\\Users\\mattg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mattg\\source\\repos\\Project01\\Project1\\obj\\",
+      "projectPath": "C:\\Users\\mchildr3\\source\\repos\\Project01\\Project1\\Project01.csproj",
+      "packagesPath": "C:\\Users\\mchildr3\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mchildr3\\source\\repos\\Project01\\Project1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mattg\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\mchildr3\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +28,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
