@@ -21,12 +21,10 @@ namespace Project01
                 if (menuChoice == '1')
                 {
                     OnePlayerMode();
-                    break;
                 }
                 else if (menuChoice == '2')
                 {
                     TwoPlayerMode();
-                    break;
                 }
                 else if (menuChoice == '3')
                 {
@@ -38,7 +36,7 @@ namespace Project01
                 }
 
             } while (menuChoice != '4');
-        }
+         }
         // Utility Methods
         /// <summary>
         /// A method that given a message prompt will, print the message, allow th euser to enter a value,
@@ -60,10 +58,6 @@ namespace Project01
         /// <returns></returns>
         static char PromptForCharHidden(string messagePrompt)
         {
-            Console.WriteLine("--- Choose a value ---");
-            Console.WriteLine("Press 1 for a Rock Bottom");
-            Console.WriteLine("Press 2 for some Flying Leg Scissors");
-            Console.WriteLine("Press 3 for Whatever Paper Is");
             Console.Write(messagePrompt);
             return Convert.ToChar(Console.ReadKey(true));
         }
@@ -99,11 +93,11 @@ namespace Project01
         static byte CalculateWinner(char playerOneChoice, char playerTwoChoice)
         {
             byte result;
-            if ((playerOneChoice == 1 && playerTwoChoice == 3) || (playerOneChoice == 2 && playerTwoChoice == 1) || (playerOneChoice == 3 && playerTwoChoice == 2))
+            if ((playerOneChoice == '1' && playerTwoChoice == '3') || (playerOneChoice == '2' && playerTwoChoice == '1') || (playerOneChoice == '3' && playerTwoChoice == '2'))
             {
                 result = 1;
             }
-            else if ((playerOneChoice == 1 && playerTwoChoice == 2) || (playerOneChoice == 2 && playerTwoChoice == 3) || (playerOneChoice == 3 && playerTwoChoice == 1))
+            else if ((playerOneChoice == '1' && playerTwoChoice == '2') || (playerOneChoice == '2' && playerTwoChoice == '3') || (playerOneChoice == '3' && playerTwoChoice == '1'))
             {
                 result = 2;
             }
@@ -122,6 +116,37 @@ namespace Project01
         /// <param name="playerTwoChoice"></param>
         static void PrintResults(string playerOneName, char playerOneChoice, string playerTwoName, char playerTwoChoice)
         {
+            byte result;
+            string p1Choice, p2Choice;
+
+            result = CalculateWinner(playerOneChoice, playerTwoChoice);
+            p1Choice = ConvertChoiceToName(playerOneChoice);
+            p2Choice = ConvertChoiceToName(playerTwoChoice);
+
+            if (result == 1)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"{playerOneName} chose {p1Choice}.");
+                Console.WriteLine($"{playerTwoName} chose {p2Choice}");
+                Console.WriteLine();
+                Console.WriteLine($"{playerOneName} wins");
+            }
+            else if (result == 2)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"{playerOneName} chose {p1Choice}.");
+                Console.WriteLine($"{playerTwoName} chose {p2Choice}");
+                Console.WriteLine();
+                Console.WriteLine($"{playerTwoName} wins");
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine($"{playerOneName} chose {p1Choice}.");
+                Console.WriteLine($"{playerTwoName} chose {p2Choice}");
+                Console.WriteLine();
+                Console.WriteLine("it's a tie!");
+            }
         }
         /// <summary>
         /// a method that takes a character choice ['1','2','3'] and return 
@@ -132,11 +157,11 @@ namespace Project01
         static string ConvertChoiceToName(char playerChoice)
         {
             string choice;
-            if (playerChoice == 1)
+            if (playerChoice == '1')
             {
                 choice = "Rock Bottom";
             }
-            else if (playerChoice == 2)
+            else if (playerChoice == '2')
             {
                 choice = "Flying Leg Scissors";
             }
@@ -185,7 +210,7 @@ namespace Project01
             Console.WriteLine("     3. Game Rules");
             Console.WriteLine("     4. Exit the Game");
             Console.WriteLine();
-            choice = PromptForChar("Choose [1-4]");
+            choice = PromptForChar("Choose [1-4]: ");
             Console.Clear();
             return choice;
         }
@@ -219,15 +244,18 @@ namespace Project01
             char playerOneChoice, playerTwoChoice;
 
             PrintSmallHeader();
-
-            playerOneName = PromptForString("What is Player One's Name? : ");
             Console.WriteLine();
-            playerTwoName = PromptForString("What is Player Two's Name? : ");
+            playerOneName = PromptForString("What is Player One's Name?: ");
+            playerTwoName = PromptForString("What is Player Two's Name?: ");
             Console.WriteLine();
             Console.Clear();
             PrintSmallHeader();
             Console.WriteLine($"{playerOneName} VERSUS {playerTwoName}");
             PrintRules();
+            Console.WriteLine("--- Choose a value ---");
+            Console.WriteLine("Press 1 for a Rock Bottom");
+            Console.WriteLine("Press 2 for some Flying Leg Scissors");
+            Console.WriteLine("Press 3 for Whatever Paper Is");
             do
             {
                 playerOneChoice = PromptForChar($"{playerOneName} - > : ");
@@ -241,7 +269,6 @@ namespace Project01
             PrintResults(playerOneName, playerOneChoice, playerTwoName, playerTwoChoice);
             PressAnyKey();
             Console.Clear();
-
         }
         static void RulesMode()
         {
